@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Gillian App</string>
+    <string name="btn_say_Hi">Hello!Guest</string>
+</resources>
