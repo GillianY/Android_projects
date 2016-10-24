@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+
+    tools:context="com.gmail.gina.m07_internationalization.MainActivity"
+    android:orientation="vertical"
+    android:gravity="center|center"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:id="@+id/layout01">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:srcCompat="@mipmap/pumkin01"
+
+            android:id="@+id/imageView"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <Button
+        android:text="@string/pumkin"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:id="@+id/btn_pumpkin"
+        android:layout_marginTop="-6dp"
+        android:background="#6a731d"
+
+        />
+
+    <TextView
+        android:text="@string/pumkinMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tV_msg"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="18dp"
+        android:gravity="center|center"
+        android:textSize="24sp"
+        />
+</LinearLayout>

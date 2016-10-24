@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">M07_多語言</string>
+    <string name="pumkin">zucca</string>
+    <string name="pumkinMsg">Buon Halloween!</string>
+</resources>
