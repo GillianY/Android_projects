@@ -7,7 +7,7 @@ import android.widget.*;
 
 public class MainActivity extends AppCompatActivity {
     ImageView img_on;
-    ImageView img_off;
+  //  ImageView img_off;
     SeekBar sk_bar ; //
     Switch switch1;
 
@@ -23,13 +23,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
          img_on =(ImageView)findViewById(R.id.img_on);
-         img_off =(ImageView)findViewById(R.id.img_off);
          sk_bar =(SeekBar)findViewById(R.id.br_opacity) ; //
          switch1 =(Switch)findViewById(R.id.switch1);
 
-        sk_bar.setEnabled(false);
-       // img_on.
-        img_on.setVisibility(View.GONE); //View.GONE View.VISIBLE
+      //   sk_bar.setEnabled(false);
+        // img_on.setVisibility(View.INVISIBLE); //View.GONE View.VISIBLE
         // 0 = transparent and 1 = visible   alpha: so 0.5 is half way visible
 
 
@@ -37,22 +35,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initHandler() {
-
-
-
-        switch1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                img_on.setVisibility(View.VISIBLE);
-                sk_bar.setEnabled(true);
+       // power.setOnCheckedChangeListener
+        switch1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+             @Override
+             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                 sk_bar.setEnabled(isChecked);
+                 img_on.setVisibility(isChecked? View.VISIBLE: View.INVISIBLE);
 
             }
         });
+
+
         sk_bar.setOnSeekBarChangeListener( new SeekBar.OnSeekBarChangeListener(){
             @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    float pro =  progress/(float)sk_bar.getMax();
+                img_on.setAlpha(pro);
 
-            }
+                  }
 
                     @Override
                     public void onStartTrackingTouch(SeekBar seekBar) {
