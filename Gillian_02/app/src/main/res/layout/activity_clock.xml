@@ -20,10 +20,10 @@
         >
 
         <TextView
-            android:text="TextView"
+            android:text="10"
             android:layout_width="match_parent"
             android:layout_height="80dp"
-            android:id="@+id/textView2"
+            android:id="@+id/tv_countdown"
             android:gravity="center"
             />
 
@@ -40,32 +40,32 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:id="@+id/button4" />
+                android:id="@+id/btnstart" />
 
             <Button
-                android:text="pause"
+                android:text="RESTART"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/button4"
+                android:layout_alignBottom="@+id/btnstart"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/button5" />
+                android:id="@+id/btnrestart" />
 
             <Button
-                android:text="Button"
+                android:text="CONTINUE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/button9"
+                android:layout_alignTop="@+id/btnpause"
                 android:layout_alignParentEnd="true"
 
-                android:id="@+id/button10" />
+                android:id="@+id/btncontinue" />
 
             <Button
-                android:text="restart"
+                android:text="PAUSE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
-                android:id="@+id/button9"
-                android:layout_below="@+id/button4"
+                android:id="@+id/btnpause"
+                android:layout_below="@+id/btnstart"
                 android:layout_alignParentStart="true" />
         </RelativeLayout>
     </LinearLayout>
@@ -74,5 +74,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1">
+
+        <TextView
+            android:text="TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:id="@+id/tv_clock" />
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/btn2start" />
+
+        <Button
+            android:text="Button"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/btn2end" />
     </LinearLayout>
 </LinearLayout>
