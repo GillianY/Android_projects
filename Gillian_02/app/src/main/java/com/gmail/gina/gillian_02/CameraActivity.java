@@ -17,6 +17,11 @@ import android.view.*;
 import android.view.View;
 import android.widget.*;
 
+import java.util.concurrent.Semaphore;
+
+/***
+ * https://github.com/xamarin/monodroid-samples/commit/3e043267b9cacccb97d6a8be59aa1775b9b31257
+ * */
 public class CameraActivity extends AppCompatActivity {
 
     private final String tag = "VideoServer";
@@ -77,11 +82,12 @@ public class CameraActivity extends AppCompatActivity {
             @Override
             public void onOpened(CameraDevice camera) {
                 Log.d("linc","DeviceStateCallback:camera was opend.");
+                Semaphore mCameraOpenCloseLock = new Semaphore(1);
                 mCameraOpenCloseLock.release();
                 mCameraDevice = camera;
                 try {
                     createCameraCaptureSession();
-                } catch (CameraAccessException e) {
+                } catch (Exception e) { //CameraAccessException e
                     e.printStackTrace();
                 }
             }  @Override
@@ -134,9 +140,9 @@ public class CameraActivity extends AppCompatActivity {
                 }
             };
             mImageReader.setOnImageAvailableListener(mOnImageAvailableListener, mHandler);
-
-            mCameraManager.openCamera(mCameraId, DeviceStateCallback, mHandler);
-        } catch (CameraAccessException e) {
+             //TODO
+           // mCameraManager.openCamera(mCameraId, DeviceStateCallback, mHandler);
+        } catch (Exception e) {  //CameraAccessException e
             Log.e("linc", "open camera failed." + e.getMessage());
         }
     }
