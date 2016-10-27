@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import java.util.Date;
 import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
@@ -81,4 +82,6 @@ public class MainActivity extends AppCompatActivity {
         btnhardCoding= (Button) findViewById(R.id.btnhardcoding);
 
     }
+
+
 }

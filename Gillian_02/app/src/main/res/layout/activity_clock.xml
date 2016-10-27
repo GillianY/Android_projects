@@ -85,13 +85,13 @@
             android:id="@+id/tv_clock" />
 
         <Button
-            android:text="Button"
+            android:text="Start"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:id="@+id/btn2start" />
 
         <Button
-            android:text="Button"
+            android:text="stop"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:id="@+id/btn2end" />

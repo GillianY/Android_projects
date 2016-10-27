@@ -10,11 +10,10 @@ import java.text.*;
 
 public class MainActivity extends AppCompatActivity {
 
-
     private TextView tv_display;
 
     private String Tag;
-    private  SimpleDateFormat sdFormat;
+    private SimpleDateFormat sdFormat;
     private boolean isRunning;
 
     @Override
