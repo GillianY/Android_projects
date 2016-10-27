@@ -3,6 +3,7 @@ package com.gmail.gina.m13_activitycommunication;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,10 @@ public class MainActivity extends AppCompatActivity {
     private Button btnqr ;
     private EditText etinput;
     private TextView tvoutput;
+
+    private static final int QRCOde= 1;
+    private static final int CAMERA = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,8 +65,24 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode ==QRCOde)
+        {
+            if(resultCode==RESULT_OK)
+            {
+                String str = data.getStringExtra("MSG");
+                tvoutput.setText(str);
+            }
+
+        }else if(requestCode ==CAMERA)
+        {}
+    }
+
     private void initHandler()
     {
+
         btnphonecall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +100,16 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent it = new Intent();
                 it.setClass(MainActivity.this, NextActivity.class) ;
+                //case 1
+                Bundle data = new Bundle();
+                data.putString("Name",etinput.getText().toString());
+                data.putString("Age","28");
+                it.putExtras(data);
+
+                //case2
+                it.putExtra("New","Gina");
+                it.putExtra("Age2","26");
+
                 startActivity(it);
                // finish();  // finish old avtivity
             }
@@ -87,6 +118,10 @@ public class MainActivity extends AppCompatActivity {
         btnqr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.i("Gina","test");
+                Intent it = new Intent();
+                it.setClass(MainActivity.this, NextActivity.class);
+                startActivityForResult(it,QRCOde);
 
             }
         });

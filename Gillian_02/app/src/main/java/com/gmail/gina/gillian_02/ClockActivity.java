@@ -6,6 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class ClockActivity extends AppCompatActivity {
 
     private Button btn1start ;
@@ -17,7 +21,11 @@ public class ClockActivity extends AppCompatActivity {
     
     private TextView tvCountDown;
     private TextView tvClock;
-    
+
+    private int counter;
+    private Date new;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +51,22 @@ public class ClockActivity extends AppCompatActivity {
     }
 
     private void initHandler() {
-        
+
+
+
         btn1start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Timer  :scheduleAtFixedRate
+                Timer clocktimer = new Timer();
+                TimerTask ts = new TimerTask(){};
                 
                 
             }
         });
+
+
+        // strat countdount;
         
     }
 }

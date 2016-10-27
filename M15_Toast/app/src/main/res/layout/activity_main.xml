@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+
+    tools:context="com.gmail.gina.m15_toast.MainActivity"
+    android:orientation="vertical">
+
+    <Button
+        android:text="Toast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btntoast"
+        android:layout_margin="2dp"
+        android:background="#926ad7"/>
+
+    <Button
+        android:text="Custom  Position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btncustomposition"
+        android:layout_margin="2dp"
+        android:background="#6a6ed7"/>
+
+    <Button
+        android:text="CUSTOM  LAYOUT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btncustomlayout"
+        android:layout_margin="2dp"
+        android:background="#6a85d7"/>
+
+    <Button
+        android:text="HardCoding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnhardcoding"
+        android:layout_margin="2dp"
+        android:background="#ad6ad7"/>
+</LinearLayout>
