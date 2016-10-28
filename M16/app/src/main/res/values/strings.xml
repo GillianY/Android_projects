@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">M16</string>
+    <string-array name="products">
+        <item>iphone</item>
+        <item>iWatch</item>
+        <item>iMac</item>
+        <item>ipod</item>
+    </string-array>
+</resources>
