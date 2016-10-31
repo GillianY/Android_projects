@@ -34,9 +34,7 @@ public class ClockActivity extends AppCompatActivity {
   private enum status{
       START,RESTART,PAUSE,
   }
-
-
-    @Override
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clock);
@@ -44,9 +42,7 @@ public class ClockActivity extends AppCompatActivity {
         initHandler();
 
     }
-
-
-    private void initView() {
+ private void initView() {
           btn1start =(Button)findViewById(R.id.btnstart);
           btn1restart =(Button)findViewById(R.id.btnrestart) ;
           btn1pause =(Button)findViewById(R.id.btnpause);
@@ -65,8 +61,7 @@ public class ClockActivity extends AppCompatActivity {
     private void initHandler() {
         counter=0;
         now = new Date();
-
-        //countdown
+     //countdown
         /*
         timer_count = new Timer();
         timer_count.schedule(new TimerTask() {
@@ -76,9 +71,7 @@ public class ClockActivity extends AppCompatActivity {
 
             }
         },0,100);*/
-
-
-        //clock
+     //clock
         btn2_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

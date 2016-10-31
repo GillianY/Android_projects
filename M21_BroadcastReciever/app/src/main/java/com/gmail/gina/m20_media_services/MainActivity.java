@@ -109,5 +109,7 @@ public class MainActivity extends AppCompatActivity {
         btn_play=(Button) findViewById(R.id.btnplay);
         btn_pause =(Button) findViewById(R.id.btnpause);
         btn_stop =(Button) findViewById(R.id.btnstop);
+        btn_pause.setEnabled(false);
+        btn_stop.setEnabled(false);
     }
 }
