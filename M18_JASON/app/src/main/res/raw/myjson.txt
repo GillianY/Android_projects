@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "cate_name": "iPod touch"
+    },
+    {
+        "id": "2",
+        "cate_name": "iPod nano"
+    },
+    {
+        "id": "3",
+        "cate_name": "iPod shuffle"
+    },
+    {
+        "id": "4",
+        "cate_name": "iPhone"
+    },
+    {
+        "id": "5",
+        "cate_name": "iPad"
+    },
+    {
+        "id": "6",
+        "cate_name": "Apple原廠配件"
+    }
+]
