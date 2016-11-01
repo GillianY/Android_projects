@@ -28,8 +28,8 @@ public class MyMusicService extends Service {
         player1 = MediaPlayer.create(this,R.raw.theshow);
         player1.setVolume(1,1);
         try {
-            player1.prepare();
-        } catch (IOException e) {
+        //    player1.prepare();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         // player1.start();
@@ -60,8 +60,6 @@ public class MyMusicService extends Service {
         };
         //!!!!!
         registerReceiver(br, new IntentFilter("com.mymusic"));
-
-
 
         Log.i("Gina","onStartCommand");
         return super.onStartCommand(intent, flags, startId);

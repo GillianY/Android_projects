@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initHander() {
+        /*
         Thread thread1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -68,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         thread1.start();
+        */
 
         btn_m_start.setOnClickListener(
                 new View.OnClickListener() {
@@ -212,7 +214,6 @@ public class MainActivity extends AppCompatActivity {
     private String getDate() {
         SimpleDateFormat dformat = new SimpleDateFormat("yyyy/MM/dd a HH/mm/ss.SSS");
         dformat.setTimeZone(TimeZone.getTimeZone("Asia/Taipei"));
-        dformat.format( new Date());
-        return dformat.toString();
+        return dformat.format( new Date());
     }
 }
