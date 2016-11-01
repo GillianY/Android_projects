@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">M25_ListView</string>
+    <string-array name="PPAP">
+        <item>Pen</item>
+        <item>Apple</item>
+        <item>Pineapple</item>
+        <item>LongPen</item>
+    </string-array>
+</resources>

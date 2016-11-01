@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">M22_Spinner</string>
+    <string-array name = "ColorNames">
+        <item>Select</item>
+        <item>White</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+    </string-array>
+    <string-array name = "ColorCodes">
+        <item> </item>
+        <item>#fffffa</item>
+        <item>#6b7eb9</item>
+        <item>#cbda87</item>
+    </string-array>
+</resources>
