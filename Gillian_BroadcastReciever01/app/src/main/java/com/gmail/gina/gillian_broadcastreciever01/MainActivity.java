@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_clock;
     private Timer timer1 ;
     private boolean isRunning =false;
+    private String date="";
 
     private BroadcastReceiver br ;
 
@@ -36,21 +37,37 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();
-        initHander();
 
         Intent it = new Intent();
         it.setClass(MainActivity.this, MyMusicService.class);
         it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startService(it);
 
+        initView();
+        initHander();
+
+
+        //TODO  recieve clock
         br = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Intent it = new Intent(DATA);
+                String data = intent.getStringExtra("DATE");
+                if(data.equals("DATE"))
+                {
+                    date = data;
+                }else
+                {
+                    date="2000-01-01";
+                }
             }
         };
-        registerReceiver(br,new IntentFilter("com.clock"));
+        registerReceiver(br,new IntentFilter("com.counter"));
+
+        for(;isRunning;)
+        {
+            updateUI2(date);
+        }
+        Log.i("Gina","hello");
     }
 
     private void initHander() {
@@ -112,7 +129,7 @@ public class MainActivity extends AppCompatActivity {
 
                         v.setEnabled(false);
                         btn_m_pause.setEnabled(false);
-                        btn_m_stop.setEnabled(true);
+                        btn_m_start.setEnabled(true);
                     }
                 }
         );
@@ -206,6 +223,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 tv_clock.setText(getDate());
+                Log.i("gina","updateUI");
+            }
+        });
+    }
+
+    void updateUI2(final String date){
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                tv_clock.setText(date);
                 Log.i("gina","updateUI");
             }
         });
