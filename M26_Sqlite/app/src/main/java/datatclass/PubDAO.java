@@ -41,6 +41,8 @@ public class PubDAO {
 
     public SQLiteDatabase openReadDatabase() {
         File dbFile = ctx.getDatabasePath(DB_NAME);
+        Log.i("Gina_", ctx.getDatabasePath(DB_NAME).toURI().toString());
+        Log.i("Gina_",dbFile.getAbsolutePath());
 
         if (!dbFile.exists()) {
             try {
@@ -129,6 +131,7 @@ public class PubDAO {
     public void insert(Pub pub)
     {
         SQLiteDatabase db = openWriteDatabase();
+        //Log.i("Gina", pub.toContentValues().toString());
         try{db.insert("Pub",null,pub.toContentValues());}
         catch (Exception e)
         {

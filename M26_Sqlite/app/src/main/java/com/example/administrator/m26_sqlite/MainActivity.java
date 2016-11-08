@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dao = new PubDAO(this);
+
         list = dao.getAllPubs();
         Log.i("Gina",list.size()+"");
         list = dao.getAllPubsByName("Trio");
@@ -43,13 +44,14 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
         initHandler();
+        Log.i("Main","Main onCreate");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         String queryText = condition.getText().toString();
-        Log.i("Gina_", ""+queryText.length());
+       // Log.i("Gina_", ""+queryText.length());
         if(queryText.length()>0)
         {
             list = dao.getAllPubsByName(queryText);
@@ -57,8 +59,8 @@ public class MainActivity extends AppCompatActivity {
         {list = dao.getAllPubs();}
         MyCellAdapter adapter = new MyCellAdapter(this,list);
         listView.setAdapter(adapter);
+        Log.i("Main","Main onResume");
     }
-
 
 
     private void initHandler() {
